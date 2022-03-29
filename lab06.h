@@ -37,6 +37,8 @@ whitespace  ::=  (' ' | '\t') (' ' | '\t')*
 
 enum scan_token_enum {
     TK_INTLIT, /* -123, 415 */
+    TK_BINLIT, /* 0b10 */
+    TK_HEXLIT, /* 0xFF */
     TK_LPAREN, /* ( */
     TK_RPAREN, /* ) */
     TK_PLUS,   /* + */
@@ -48,7 +50,8 @@ enum scan_token_enum {
     NUM_TOKENS,
 };
 
-#define SCAN_TOKEN_STRINGS {"TK_INTLIT", "TK_LPAREN", "TK_RPAREN", \
+#define SCAN_TOKEN_STRINGS {"TK_INTLIT", "TK_BINLIT", "TK_HEXLIT", \
+                            "TK_LPAREN", "TK_RPAREN", \
                             "TK_PLUS", "TK_MINUS", "TK_MULT", "TK_DIV", \
                             "TK_EOT", "TK_ANY"};
 
